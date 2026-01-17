@@ -35,7 +35,13 @@ app = FastAPI(title="API Predicción de Sequía en Embalses")
 # Configurar CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://front-end-unit-25.vercel.app/"],  # Permitir todas las orígenes
+    allow_origins=[
+        "http://localhost:5500",          # Live Server típico
+        "http://127.0.0.1:5500",
+        "http://localhost:3000",          # otros posibles dev servers
+        "http://127.0.0.1:3000",
+        "https://front-end-unit-25.vercel.app",  # Vercel (sin barra final)
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
