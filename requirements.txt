@@ -1,23 +1,21 @@
-# ==============================
-# Backend Dependencies - UNIT 25
-# ==============================
+# Dependencias del Backend - Predicción de Sequías
 
 # Framework web
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 
-# Data handling
-pandas==2.1.3
-numpy==1.26.2
+# Manejo de datos (compatibles con Python 3.13)
+pandas==2.2.3
+numpy==2.0.2
 
-# Time series forecasting
-prophet==1.1.4
+# Modelo de series temporales
+prophet==1.1.5
 
-# Data validation
+# Validación de datos
 pydantic==2.5.0
 
-# CORS / multipart support
+# Middleware CORS / multipart
 python-multipart==0.0.6
 
-# Environment variables
+# Variables de entorno
 python-dotenv==1.0.0
