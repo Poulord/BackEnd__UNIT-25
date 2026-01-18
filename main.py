@@ -31,6 +31,7 @@ from model import predecir_escenario
 
 
 app = FastAPI(title="API Predicción de Sequía en Embalses")
+
 @app.get("/health", tags=["health"])
 def health_check():
     return {
