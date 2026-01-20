@@ -4,7 +4,17 @@ from pydantic import BaseModel
 from typing import Optional
 from model import predecir_escenario
 
+#Nuevo import para el nuevo comit del dataset y su conexeion al dataset
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path # Importar Path para manejar rutas de archivos
+
 app = FastAPI(title="API Predicción de Sequía en Embalses")
+
+BASE_DIR = Path(__file__).resolve().parent   # carpeta BACKEND/
+DATA_DIR = BASE_DIR / "data"                # BACKEND/data/
+
+app.mount("/data", StaticFiles(directory=str(DATA_DIR)), name="data")
+
 
 # --- CORS ---
 app.add_middleware(
